@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxOsc.h"
+#include "Particle.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -24,8 +25,13 @@ class ofApp : public ofBaseApp{
         ofxOscReceiver receiver;
         int x;
         int y;
+    int mouseClickX;
+    int mouseClickY;
     int sideCounter;
     int colorCounter;
+    int timeSinceExp;
     bool ascending;
+    bool mouseClick;
     vector <ofVec2f>positions;
+    vector <Particle> particles;
 };
