@@ -52,7 +52,7 @@ void ofApp::update(){
     curPos.y = y;
     positions.push_back(curPos);
     if(positions.size() > 20){
-        positions.erase(positions.begin()+1);
+        positions.erase(positions.begin());
     }
 }
 
@@ -63,7 +63,12 @@ void ofApp::draw(){
     ofSetBackgroundColor(c2);
     ofSetCircleResolution(sideCounter);
     for (int i = 0; i < positions.size(); i++) {
+        ofFill();
         ofSetColor(c, i*5);
+        ofDrawCircle(positions[i].x, positions[i].y, sideCounter*2.5);
+        ofNoFill();
+        ofSetColor(255);
+        ofSetLineWidth(1);
         ofDrawCircle(positions[i].x, positions[i].y, sideCounter*2.5);
     }
 }
